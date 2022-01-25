@@ -1,9 +1,17 @@
 import React from 'react';
 
 
-const Input = () => {
+const Input = ({lable, type}) => {
     return (
         <div>
+            <label className="">{lable}</label>
+            <input
+                type={type}
+                name="age"
+            // value={inputs.age || ""}
+            // onChange={handleChange}
+            />
+
 
         </div>
     );
