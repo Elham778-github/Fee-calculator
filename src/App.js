@@ -1,25 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+// import { Alert, Button, Badge } from "react-bootstrap";
+// import { ToastContainer, toast } from "react-toastify";
+// import SimpleContext from "../../personmanager/src/contex/simpleContex";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+const App = () => {
+    // const [getPersons, setPersons] = useState([]);
+    // const [getSinglePerson, setSinglePerson] = useState({ fullname: "" });
+    // const [getShowDiv, setShowDiv] = useState(true);
 
-export default App;
+    return (
+        // <SimpleContext.Provider
+        //     value={{
+        //     }}>
+            <div>
+                <form>
+                    <label>Enter your name:
+                        <input
+                            type="text"
+                            // value={name}
+                            // onChange={(e) => setName(e.target.value)}
+                        />
+                    </label>
+                </form>
+            </div>
+        // </SimpleContext.Provider>
+
+
+    )
+        }
+    export default App;
