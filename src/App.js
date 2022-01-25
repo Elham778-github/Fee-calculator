@@ -4,6 +4,9 @@ import React from "react";
 // import SimpleContext from "../../personmanager/src/contex/simpleContex";
 
 import Header from "./components/Header";
+import Body from "./components/Body";
+import Footer from './components/Footer';
+
 
 
 const App = () => {
@@ -15,61 +18,18 @@ const App = () => {
         // <SimpleContext.Provider
         //     value={{
         //     }}>
+
         <div className="container">
             <div className="card" >
                 <div className="card-header">
                     <Header />
                 </div>
                 <div className="card-body">
-                    <div>
-                        <label className="">Card Value
-                        </label>
-                        <input
-                                type="number"
-                                name="age"
-                            // value={inputs.age || ""}
-                            // onChange={handleChange}
-                            />
-
-                    </div>
-                    <div>
-                        <label>Delivery Distance
-                        </label>
-                        <input
-                                type="number"
-                                name="age"
-                            // value={inputs.age || ""}
-                            // onChange={handleChange}
-                            />
-
-                    </div>
-                    <div>
-                        <label>EAmount of items
-                        </label>
-                        <input
-                                type="number"
-                                name="age"
-                            // value={inputs.age || ""}
-                            // onChange={handleChange}
-                            />
-
-                    </div>
-                    <div>
-                        <label>Time
-                        </label>
-                        <input
-                                type="date"
-                                name="age"
-                            // value={inputs.age || ""}
-                            // onChange={handleChange}
-                            />
-
-                    </div>
-
-
-
+                    <Body/> 
                 </div>
-                <div className="card-footer"></div>
+                <div className="card-footer">
+                    <Footer></Footer>
+                </div>
 
             </div>
 
