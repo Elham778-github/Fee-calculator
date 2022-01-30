@@ -2,23 +2,23 @@ import React, { useContext } from "react";
 
 import { Alert } from "react-bootstrap";
 import SimpleContext from "../contect/simpleContex";
-
+import "../App.css";
 
 const Footer = () => {
     const context = useContext(SimpleContext);
     return (
-        <div className="pt-3">
+        <div className=" mt-5 d-block footer-alert  mx-auto shadow-lg text-white rounded">
             <div className={context.gift == false ? "" : "d-none"}>
-                <Alert variant="info" className="text-center shadow">
-                    <span>Delivery price: {context.price}€</span>
+                <Alert variant="" className="text-center">
+                    <span>Delivery price: <span>{context.price}€</span></span>
                 </Alert>
             </div>
 
-            <div className={context.gift == true ? "" : "d-none"}>
-                <Alert variant="success" className="text-center shadow-lg" >
-                    <span>Delivery price: {context.price}€</span>
+            <div className={context.gift == true ? "wow slideInLeft" : "d-none"}>
+                <Alert variant="" className="text-center " >
+                    <p><span>Delivery price:{context.price}€</span></p>
 
-                    <span> Free Delivery </span>
+                    <span className="shadow-lg"> Free Delivery </span>
 
 
                 </Alert>

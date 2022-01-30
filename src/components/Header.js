@@ -1,15 +1,11 @@
 import React from "react";
-import { Alert } from "react-bootstrap";
+import "../App.css"
 
 const Header = () => {
-    return (
-        
-            <div className="text-center" >
+    return (        
+            <div className="form-header text-center p-3" >
                 <h4>Deliver Fee Calculator</h4>
-            </div>
-
-        
+            </div>        
     );
 }
-
 export default Header;

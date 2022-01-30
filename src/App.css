@@ -1,0 +1,30 @@
+#Elham{
+
+color: #013B46;
+color: #06575B;
+color: #61A3AC;
+color: #C0DEE5;
+
+}
+
+.form-header{
+    background-color: #C0DEE5;
+    color : #013B46; 
+}
+.calculate-btn{
+    color : black;
+    background-color: transparent;
+    box-shadow: 10px 10px gray;
+    color: #013B46;
+}
+.calculate-btn:hover{
+    background-color: #06575B;
+    color : white;
+    box-shadow : 10px 10px grey;
+}
+.footer-alert{
+    background-color:#61A3AC;   
+
+    width: 50%;
+    justify-content: center;
+}

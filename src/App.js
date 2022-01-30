@@ -1,19 +1,15 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { Alert, Button, Badge, Placeholder } from "react-bootstrap";
 import { ToastContainer, toast } from "react-toastify";
 import 'animate.css';
 import Radium from "radium";
-
 
 import Header from "./components/Header";
 import Body from "./components/Body";
 import Footer from './components/Footer';
 import SimpleContext from "./contect/simpleContex";
 
-import {abc} from  "./constance";
-
-
-
+import "./App.css"
 
 const App = () => {
     const [cardValue, setCardValue] = useState(0);
@@ -24,29 +20,20 @@ const App = () => {
     var [price, setPrice] = useState(0);
 
 
+    const context = useContext(SimpleContext);
+
+
     const handleCalculate = () => {
-        price = 0;  // ............................
-        alert("send me " + abc.xyz)
+        price = 0;  // .............................
 
         let deliveryPrice = price;
         let distance = deliveryDistance;
         let time = orderTime;
-        // const priceFreeDelivery = 100;
-
-
 
         if (cardValue && deliveryDistance && cardValue && numberOfItem && orderTime) {
-
-            if (cardValue >= abc.priceFreeDelivery) {
+            if (cardValue >= context.priceFreeDelivery) {
                 setGift(!gift);
                 deliveryPrice = 0;
-                // toast.success(" We pay for shipping, thanks for your purchase", {
-                //     autoClose: "false",
-                //     position: "bottom-right",
-                //     closeButton: true,
-                //     closeOnClick: true
-                // });
-
             } else {
 
                 if (cardValue < 10) {
@@ -97,7 +84,7 @@ const App = () => {
 
     const setEvent = (event, parametr) => {
         let value = event.target.value;
-        let name = event.target.name;
+        const name = event.target.name;
         if (name == "Card Value" || name == "Delivery Distance" || name == "Amount of items") {
             if (value < 0 || value == NaN) {
                 value = 0;
@@ -105,11 +92,12 @@ const App = () => {
                 toast.warning(" please enter a positive value in " + name, {
                     position: "top-center",
                     closeButton: "true",
-    
+
                 })
-    
+
                 // alert(" please enter a corect input in " + name);
-                document.getElementById(name).setOrderTime("placeholder", 0);
+                var b = document.querySelector(`#${name}`)
+                b.setAttribute("value", "0");
             } else parametr(value);
         } else {
             parametr(value);
@@ -138,20 +126,19 @@ const App = () => {
                 setOrderTime: setOrderTime,
                 setEvent: setEvent
             }}>
-            <h1 className="animate__animated animate__bounce" hidden>We pay for shipping, thanks for your purchase</h1>
 
             <ToastContainer />
-            <div className="container mx-auto my-3 px-auto py-auto w-50 ">
+            <div className="container mx-auto my-5 px-auto py-auto w-50 ">
                 <form className="card  " >
-                    <div className="card-header">
+                    <div className="card-header m-0 p-0">
                         <Header />
                     </div>
                     <div className="card-body">
                         <Body setDeliveryDistance={setDeliveryDistance} />
                         <Footer ></Footer>
                     </div>
-                    <div className="card-footer">
-                        <Button className="d-block mx-auto" onClick={handleCalculate} style={{ backgroundColor: "#94c4cf" }} >Calculate Delivery Price </Button>
+                    <div className="card-footer  form-header">
+                        <Button variant="" className="calculate-btn d-block mx-auto shadow-lg p-3" onClick={handleCalculate}><strong>Calculate Delivery Price </strong> </Button>
                     </div>
                 </form>
 
@@ -161,6 +148,7 @@ const App = () => {
     );
 }
 export default Radium(App);
+
 
 
 
